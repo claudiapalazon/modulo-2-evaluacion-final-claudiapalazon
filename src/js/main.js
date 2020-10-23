@@ -4,7 +4,6 @@ const btn = document.querySelector(".js--button");
 const showsList = document.querySelector(".main__list");
 
 let shows = [];
-let result;
 function getDogImage() {
   const input = document.querySelector(".js--input").value;
   console.log(input); //Borrar console más adelante
