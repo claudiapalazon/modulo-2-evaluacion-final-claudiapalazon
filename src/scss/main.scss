@@ -1,0 +1,14 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+.main {
+  height: 100vh;
+  background-color: black;
+  &__text {
+    color: white;
+  }
+  &__form--submit {
+    cursor: pointer;
+  }
+}
