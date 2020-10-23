@@ -5,6 +5,7 @@ function paintData(string) {
   html += string;
   return html;
 }
+
 function paintShows() {
   for (let i = 0; i < shows.length; i++) {
     paintData(`<li class='js-show-item' id="${i}">`);
@@ -21,7 +22,6 @@ function paintShows() {
       `<img class="js-show-img" src="${imageResult}" alt="${shows[i].name}" />`
     );
   }
-
   showsList.innerHTML = html;
   html = "";
 }

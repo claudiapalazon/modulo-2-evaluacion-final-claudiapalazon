@@ -7,8 +7,9 @@ let shows = [];
 let result;
 function getDogImage() {
   const input = document.querySelector(".js--input").value;
-  console.log(input);
-  fetch(`http://api.tvmaze.com/search/shows?q=${input}`)
+  console.log(input); //Borrar console más adelante
+
+  fetch(`//api.tvmaze.com/search/shows?q=${input}`)
     .then((response) => response.json())
     .then((data) => {
       if (data.length === 0) {
