@@ -12,3 +12,14 @@
     cursor: pointer;
   }
 }
+.js-show-item {
+  background-color: green;
+  margin: 5px;
+}
+.js-show-item-favorite {
+  background-color: red;
+  margin: 5px;
+}
+.js-show-item-favorite .js-show-name {
+  color: white;
+}
