@@ -16,11 +16,12 @@
   }
 }
 .js-main-showFav .js-fav-item {
-  box-shadow: 5px 5px 15px green;
+  box-shadow: 5px 5px 15px white;
 }
 
 .js-main-containerList .container-fav {
-  background-color: mediumvioletred;
+  background: url("../images/heart2.jpg") no-repeat;
+  background-size: cover;
   width: 100%;
   height: fit-content;
   padding: 20px;
@@ -32,4 +33,9 @@
     margin-right: 0px;
     border-radius: 0px;
   }
+}
+.heart {
+  cursor: pointer;
+  margin-left: 3px;
+  color: red;
 }

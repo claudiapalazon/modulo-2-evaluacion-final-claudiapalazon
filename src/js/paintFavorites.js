@@ -1,5 +1,4 @@
 "use strict";
-
 function paintFavorites() {
   const favList = document.querySelector(".main__fav");
   if (favorites.length === 0) {
@@ -15,7 +14,7 @@ function paintFavorites() {
       htmlFav = paintData(htmlFav, `<li class='js-fav-item' id="${i}">`);
       htmlFav = paintData(
         htmlFav,
-        `<h2 class="js-fav-name">${favorites[i].name} <span class="heart">❤</span></h2>`
+        `<h2 class="js-fav-name">${favorites[i].name} <span class="heart heart${i}">❤</span></h2>`
       );
       let imageResult;
       if (favorites[i].image === null) {
@@ -32,4 +31,16 @@ function paintFavorites() {
     }
     favList.innerHTML = htmlFav;
   }
+  listenFavorite();
 }
+// function favoritesHeartClick() {
+//   console.log("entroo");
+
+// }
+// function listenFavorite() {
+//   const favoritesHearts = document.querySelectorAll(".heart");
+//   console.log("holi", favorites);
+//   for (const favoritesHeart of favoritesHearts) {
+//     favoritesHeart.addEventListener("click", favoritesHeartClick);
+//   }
+// }
