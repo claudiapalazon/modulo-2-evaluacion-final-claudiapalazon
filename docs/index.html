@@ -6,7 +6,7 @@
     <title>Buscador de series</title>
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
-  <body>
+  <body class="body">
     <main class="main">
       <h1 class="main__text">Buscador de series</h1>
       <form class="main__form">
@@ -21,8 +21,12 @@
           value="Buscar"
         />
       </form>
-      <ul class="main__list"></ul>
-      <ul class="main__fav"></ul>
+      <section class="main__lists">
+        <ul class="main__list"></ul>
+        <div class="container-fav">
+          <ul class="main__fav"></ul>
+        </div>
+      </section>
     </main>
     <script src="./assets/js/main.js"></script>
   </body>

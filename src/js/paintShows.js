@@ -23,6 +23,7 @@ function getClassShow(i) {
 }
 
 function paintShows() {
+  main.classList.add("js-main-showList");
   let html = "";
   if (shows.length === 0) {
     const input = document.querySelector(".js--input").value;
@@ -33,11 +34,10 @@ function paintShows() {
     let classFav = getClassShow(i);
     html = paintData(html, `<li class='js-show-item ${classFav}' id="${i}">`);
     html = paintData(html, `<h2 class="js-show-name">${shows[i].name}</h2>`);
-    html = paintData(html, `<div class="js-show-container">`);
     let imageResult;
     if (shows[i].image === null) {
       imageResult =
-        "https://via.placeholder.com/210x295/ffffff/666666/? text=TV";
+        "https://via.placeholder.com/210x295/666666/ffffff/? text=TV";
     } else {
       imageResult = shows[i].image.medium;
     }
@@ -45,7 +45,6 @@ function paintShows() {
       html,
       `<img class="js-show-img" src="${imageResult}" alt="${shows[i].name}" />`
     );
-    html = paintData(html, "</div>");
     html = paintData(html, "</li>");
   }
   showsList.innerHTML = html;

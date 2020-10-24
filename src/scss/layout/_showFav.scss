@@ -1,0 +1,35 @@
+.js-main-showListFav {
+  grid-template-columns: 1fr 1fr 1fr;
+  @media all and (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.js-main-showFav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  justify-items: center;
+  padding: 0px;
+  @media all and (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.js-main-containerList .container-fav {
+  background: url("../images/heart2.jpg") no-repeat;
+  // background-position: top center;
+  background-size: cover;
+  // opacity: 70%;
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 5px;
+  margin-right: 20px;
+  @media all and (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 40px;
+    margin-right: 0px;
+    border-radius: 0px;
+  }
+}

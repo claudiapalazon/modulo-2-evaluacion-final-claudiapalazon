@@ -1,0 +1,16 @@
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("../images/cinema.jpg") no-repeat;
+  background-position: top center;
+  background-size: cover;
+  &__text {
+    color: white;
+  }
+  &__form--submit {
+    cursor: pointer;
+  }
+}

@@ -1,25 +1,9 @@
-* {
-  margin: 0px;
-  box-sizing: border-box;
-}
-.main {
-  height: 100vh;
-  background-color: black;
-  &__text {
-    color: white;
-  }
-  &__form--submit {
-    cursor: pointer;
-  }
-}
-.js-show-item {
-  background-color: green;
-  margin: 5px;
-}
-.js-show-item-favorite {
-  background-color: red;
-  margin: 5px;
-}
-.js-show-item-favorite .js-show-name {
-  color: white;
-}
+//core
+@import "core/reset";
+@import "core/variables";
+
+//layout
+@import "layout/searchPage";
+@import "layout/js-changes";
+@import "layout/showList";
+@import "layout/showFav";
