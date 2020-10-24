@@ -6,7 +6,6 @@ const main = document.querySelector(".main");
 
 let shows = [];
 let favorites = [];
-// let favoriteList = [];
 function getFetch() {
   const input = document.querySelector(".js--input").value;
   console.log(input); //Borrar console más adelante

@@ -8,19 +8,13 @@ function getClassShow(i) {
   let classFav;
   const favoriteIndex = favorites.indexOf(shows[i]);
   if (favoriteIndex === -1) {
-    let prueba;
     for (const favorite of favorites) {
       if (shows[i].id === favorite.id) {
-        prueba = true;
-        break;
+        classFav = "js-show-item-favorite";
+        return classFav;
       } else {
-        prueba = false;
+        classFav = "";
       }
-    }
-    if (prueba === true) {
-      classFav = "js-show-item-favorite";
-    } else {
-      classFav = "";
     }
   } else {
     classFav = "js-show-item-favorite";

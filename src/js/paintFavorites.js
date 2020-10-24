@@ -6,7 +6,6 @@ function paintFavorites() {
     favList.innerHTML = "";
   } else if (favorites.length > 0) {
     let htmlFav = "";
-    console.log(favList);
     for (let i = 0; i < favorites.length; i++) {
       htmlFav = paintData(htmlFav, `<li class='js-fav-item' id="${i}">`);
       htmlFav = paintData(
