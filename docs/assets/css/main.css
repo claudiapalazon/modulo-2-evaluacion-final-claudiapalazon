@@ -1,1 +1,1 @@
-*{margin:0px;box-sizing:border-box}.main{height:100vh;background-color:black}.main__text{color:white}.main__form--submit{cursor:pointer}
+*{margin:0px;box-sizing:border-box}.main{height:100vh;background-color:black}.main__text{color:white}.main__form--submit{cursor:pointer}.js-show-item{background-color:green;margin:5px}.js-show-item-favorite{background-color:red;margin:5px}.js-show-item-favorite .js-show-name{color:white}
