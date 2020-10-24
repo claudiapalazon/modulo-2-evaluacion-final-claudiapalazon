@@ -31,6 +31,8 @@ function listenShow() {
     showItem.addEventListener("click", favoritesShows);
   }
   console.log(favorites);
+
   paintFavorites();
   setLocalStorage();
+  listenFavorite();
 }

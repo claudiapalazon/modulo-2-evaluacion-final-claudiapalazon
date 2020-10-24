@@ -14,6 +14,7 @@ function getFetch() {
   fetch(`//api.tvmaze.com/search/shows?q=${input}`)
     .then((response) => response.json())
     .then((data) => {
+      shows = [];
       for (let i = 0; i < data.length; i++) {
         shows[i] = data[i].show;
       }

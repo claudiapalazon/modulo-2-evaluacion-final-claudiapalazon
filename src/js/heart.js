@@ -1,8 +1,6 @@
 "use strict";
 function favoritesHeartClick(event) {
-  console.log(event.currentTarget);
   const heart = event.currentTarget;
-  console.log("entroo");
   let index;
   for (let i = 0; i < favorites.length; i++) {
     if (heart.classList.contains(`heart${i}`)) {
@@ -10,10 +8,10 @@ function favoritesHeartClick(event) {
       break;
     }
   }
-  paintShows();
-  listenShow();
   paintFavorites();
   setLocalStorage();
+  paintShows();
+  listenShow();
 }
 function listenFavorite() {
   const favoritesHearts = document.querySelectorAll(".heart");

@@ -31,16 +31,4 @@ function paintFavorites() {
     }
     favList.innerHTML = htmlFav;
   }
-  listenFavorite();
 }
-// function favoritesHeartClick() {
-//   console.log("entroo");
-
-// }
-// function listenFavorite() {
-//   const favoritesHearts = document.querySelectorAll(".heart");
-//   console.log("holi", favorites);
-//   for (const favoritesHeart of favoritesHearts) {
-//     favoritesHeart.addEventListener("click", favoritesHeartClick);
-//   }
-// }
