@@ -15,7 +15,7 @@ function paintFavorites() {
       htmlFav = paintData(htmlFav, `<li class='js-fav-item' id="${i}">`);
       htmlFav = paintData(
         htmlFav,
-        `<h2 class="js-fav-name">${favorites[i].name}</h2>`
+        `<h2 class="js-fav-name">${favorites[i].name} <span class="heart">❤</span></h2>`
       );
       let imageResult;
       if (favorites[i].image === null) {

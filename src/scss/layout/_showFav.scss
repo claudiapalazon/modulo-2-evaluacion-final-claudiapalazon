@@ -15,12 +15,12 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+.js-main-showFav .js-fav-item {
+  box-shadow: 5px 5px 15px green;
+}
 
 .js-main-containerList .container-fav {
-  background: url("../images/heart2.jpg") no-repeat;
-  // background-position: top center;
-  background-size: cover;
-  // opacity: 70%;
+  background-color: mediumvioletred;
   width: 100%;
   height: fit-content;
   padding: 20px;

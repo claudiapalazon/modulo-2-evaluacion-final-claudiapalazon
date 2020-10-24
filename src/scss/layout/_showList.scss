@@ -10,6 +10,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+.js-show-item {
+  cursor: pointer;
+}
 .js-show-item,
 .js-fav-item {
   text-align: center;

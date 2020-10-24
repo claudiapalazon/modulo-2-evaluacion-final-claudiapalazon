@@ -30,6 +30,7 @@ function listenShow() {
   for (const showItem of showItems) {
     showItem.addEventListener("click", favoritesShows);
   }
+  console.log(favorites);
   paintFavorites();
   setLocalStorage();
 }
