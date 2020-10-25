@@ -1,10 +1,33 @@
+.no-results {
+  color: white;
+  text-align: center;
+  grid-column: 3 / 4;
+  margin-top: 20px;
+}
+
+//Se dan los estilos al main cuando tiene la sección con las películas
 .js-main-showList {
   height: 100%;
   width: 100%;
   background: none;
   background-color: black;
   display: inline-block;
+  padding: 10px 0px 0 20px;
+  text-align: center;
 }
+.js-main-showList .main__text {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.js-main-showList .main__form {
+  &--input {
+    margin-bottom: 10px;
+  }
+  &--submit {
+    box-shadow: none;
+  }
+}
+//Se dan los estilos al main cuando aparece la lista de favoritos.
 .js-main-containerList {
   display: grid;
   grid-template-columns: 60% 40%;
@@ -13,5 +36,11 @@
     display: flex;
     flex-direction: column;
     margin-right: 0px;
+    .js-main-showListFav {
+      grid-template-columns: 1fr;
+    }
+    .no-results {
+      grid-column: span 1;
+    }
   }
 }

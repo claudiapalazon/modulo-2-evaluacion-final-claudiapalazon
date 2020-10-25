@@ -9,8 +9,8 @@ function getLocalStorage() {
   const localFavoritesArray = JSON.parse(localFavorites);
   if (localFavoritesArray !== null) {
     favorites = localFavoritesArray;
-    paintFavorites();
-    listenFavoriteLocal();
+    // paintFavorites();
+    // listenFavoriteLocal();
   }
 }
 

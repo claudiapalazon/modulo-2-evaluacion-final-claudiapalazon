@@ -3,7 +3,6 @@
 const btn = document.querySelector(".js--button");
 const main = document.querySelector(".main");
 const showsList = document.querySelector(".main__list");
-const FavList = document.querySelector(".main__fav");
 const mainList = document.querySelector(".main__lists");
 
 let shows = [];
