@@ -1,5 +1,7 @@
 "use strict";
 
+//Se pinta la lista de "shows". En el caso de que no exista resultado con la búsqueda, salta uno de error.
+
 function paintData(string1, string) {
   string1 += string;
   return string1;
@@ -26,21 +28,19 @@ function paintShows() {
   let html = "";
   if (shows.length === 0) {
     if (favorites.length > 0) {
-      console.log("holiii");
       const containerFav = document.querySelector(".container-fav");
-      containerFav.classList.add("container-hidden");
+      containerFav.classList.add("container-hidden"); //Hace que no se vean los favoritos en la página principal
       const input = document.querySelector(".js--input").value;
       showsList.innerHTML = `<small class="no-results">No existe ningun resultado con el nombre "${input}"</small>`;
-      // return;
     } else {
       const input = document.querySelector(".js--input").value;
       showsList.innerHTML = `<small class="no-results">No existe ningun resultado con el nombre "${input}"</small>`;
-      showsList.classList.add("js-main-noresults");
+      showsList.classList.add("js-main-noresults"); //Da estilos al main cuando no hay resultados
     }
   } else {
+    // main.classList.remove("mainFavorites");
     main.classList.add("js-main-showList");
     showsList.classList.remove("js-main-noresults");
-    // containerFav.classList.remove("container-hidden");
     for (let i = 0; i < shows.length; i++) {
       let classFav = getClassShow(i);
       html = paintData(html, `<li class='js-show-item ${classFav}' id="${i}">`);

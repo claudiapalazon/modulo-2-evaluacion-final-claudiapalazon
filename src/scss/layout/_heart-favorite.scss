@@ -1,0 +1,19 @@
+.heart-favorite {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  color: red;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.js-main-showList .heart-favorite {
+  display: none;
+}

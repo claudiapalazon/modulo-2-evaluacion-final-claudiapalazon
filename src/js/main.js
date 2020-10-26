@@ -2,14 +2,13 @@
 
 const btn = document.querySelector(".js--button");
 const main = document.querySelector(".main");
-const showsList = document.querySelector(".main__list");
 const mainList = document.querySelector(".main__lists");
+const showsList = document.querySelector(".main__list");
 
 let shows = [];
 let favorites = [];
 function getFetch() {
   const input = document.querySelector(".js--input").value;
-  console.log(input); //Borrar console más adelante
   fetch(`//api.tvmaze.com/search/shows?q=${input}`)
     .then((response) => response.json())
     .then((data) => {

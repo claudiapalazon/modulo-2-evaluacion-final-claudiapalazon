@@ -1,7 +1,8 @@
 "use strict";
+//Se escucha al corazón que tienen todos los favoritos, si se pincha en ellos se borran
+
 function favoritesHeartClick(event) {
   const heart = event.currentTarget;
-  let index;
   for (let i = 0; i < favorites.length; i++) {
     if (heart.classList.contains(`heart${i}`)) {
       favorites.splice(i, 1);

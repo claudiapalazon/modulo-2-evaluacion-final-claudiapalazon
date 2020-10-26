@@ -1,20 +1,21 @@
 "use strict";
+//Cada vez que se marque un "show" como favorito, se guarda en un array. Se comprueba si en el array ya existe ese favorito para no duplicarlo.
 
 function favoritesShows(event) {
   const clicked = parseInt(event.currentTarget.id);
   const isFavorite = favorites.indexOf(shows[clicked]);
-  let prueba = false;
+  let result = false;
   let resultFav;
   for (let i = 0; i < favorites.length; i++) {
     if (shows[clicked].id === favorites[i].id) {
-      prueba = true;
+      result = true;
       resultFav = i;
       break;
     }
   }
-  if (prueba === true) {
+  if (result === true) {
     favorites.splice(resultFav, 1);
-  } else if (prueba === false) {
+  } else if (result === false) {
     if (isFavorite === -1) {
       favorites.push(shows[clicked]);
     } else {
@@ -30,9 +31,8 @@ function listenShow() {
   for (const showItem of showItems) {
     showItem.addEventListener("click", favoritesShows);
   }
-  console.log(favorites);
 
   paintFavorites();
   setLocalStorage();
-  listenFavorite();
+  listenFavorite(); //Escucha el corazón de los favoritos para ver si hay que borrarlo o no (heart.js)
 }

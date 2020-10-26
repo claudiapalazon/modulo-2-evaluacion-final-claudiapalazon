@@ -36,9 +36,6 @@
     display: flex;
     flex-direction: column;
     margin-right: 0px;
-    .js-main-showListFav {
-      grid-template-columns: 1fr;
-    }
     .no-results {
       grid-column: span 1;
     }
