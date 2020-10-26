@@ -3,12 +3,12 @@
 //Funciones de guardar y recoger del localStorage. Si te encuentras en la página principal, puedes mirar lo que hay guardado en el localStorage. También puedes verlo si realizas cualquier búsqueda.
 
 function clickInHeart() {
-  const favList = document.querySelector(".main__fav");
   const containerFav = document.querySelector(".container-fav");
   if (main.classList.contains("mainFavorites")) {
     main.classList.remove("mainFavorites");
     containerFav.classList.add("container-hidden");
   } else {
+    mainList.classList.add("js-main-containerList");
     containerFav.classList.remove("container-hidden");
     main.classList.add("mainFavorites");
     paintFavorites();
