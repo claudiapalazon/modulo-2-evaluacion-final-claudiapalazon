@@ -3,10 +3,18 @@
 //Funciones de guardar y recoger del localStorage. Si te encuentras en la página principal, puedes mirar lo que hay guardado en el localStorage. También puedes verlo si realizas cualquier búsqueda.
 
 function clickInHeart() {
-  // main.classList.add("mainFavorites");
-  paintFavorites();
-  listenFavoriteLocal();
-  listenEliminateLocal();
+  const favList = document.querySelector(".main__fav");
+  const containerFav = document.querySelector(".container-fav");
+  if (main.classList.contains("mainFavorites")) {
+    main.classList.remove("mainFavorites");
+    containerFav.classList.add("container-hidden");
+  } else {
+    containerFav.classList.remove("container-hidden");
+    main.classList.add("mainFavorites");
+    paintFavorites();
+    listenFavoriteLocal();
+    listenEliminateLocal();
+  }
 }
 function paintHeart() {
   const newItem = document.createElement("div");
@@ -36,7 +44,6 @@ function favoritesHeartClickLocal(event) {
   const heart = event.currentTarget;
   for (let i = 0; i < favorites.length; i++) {
     if (heart.classList.contains(`heart${i}`)) {
-      console.log("entro aqui2");
       favorites.splice(i, 1);
       break;
     }
@@ -47,10 +54,10 @@ function favoritesHeartClickLocal(event) {
 }
 
 function hearHeart() {
-  console.log("entro");
   if (favorites.length === 0) {
     const items = document.querySelector(".heart-favorite");
     items.remove();
+    main.classList.remove("mainFavorites");
   }
 }
 
@@ -66,6 +73,7 @@ function favoritesEliminateLocal() {
   favorites = [];
   const items = document.querySelector(".heart-favorite");
   items.remove();
+  main.classList.remove("mainFavorites");
   paintFavorites();
   setLocalStorage();
 }
