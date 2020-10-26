@@ -17,3 +17,12 @@
 .js-main-showList .heart-favorite {
   display: none;
 }
+
+.button-fav {
+  border: none;
+  border-radius: 7px;
+  background-color: red;
+  color: white;
+  height: 30px;
+  cursor: pointer;
+}

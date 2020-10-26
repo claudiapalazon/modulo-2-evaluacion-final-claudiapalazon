@@ -6,6 +6,7 @@ function clickInHeart() {
   // main.classList.add("mainFavorites");
   paintFavorites();
   listenFavoriteLocal();
+  listenEliminateLocal();
 }
 function paintHeart() {
   const newItem = document.createElement("div");
@@ -13,7 +14,6 @@ function paintHeart() {
   newItem.appendChild(newContent);
   newItem.classList.add("heart-favorite");
   main.appendChild(newItem);
-
   newItem.addEventListener("click", clickInHeart);
 }
 
@@ -24,9 +24,11 @@ function setLocalStorage() {
 function getLocalStorage() {
   const localFavorites = localStorage.getItem("favorites");
   const localFavoritesArray = JSON.parse(localFavorites);
-  if (localFavoritesArray.length > 0) {
-    favorites = localFavoritesArray;
-    paintHeart();
+  if (localFavoritesArray !== null) {
+    if (localFavoritesArray.length > 0) {
+      favorites = localFavoritesArray;
+      paintHeart();
+    }
   }
 }
 
@@ -34,6 +36,7 @@ function favoritesHeartClickLocal(event) {
   const heart = event.currentTarget;
   for (let i = 0; i < favorites.length; i++) {
     if (heart.classList.contains(`heart${i}`)) {
+      console.log("entro aqui2");
       favorites.splice(i, 1);
       break;
     }
@@ -42,9 +45,32 @@ function favoritesHeartClickLocal(event) {
   setLocalStorage();
   listenFavoriteLocal();
 }
+
+function hearHeart() {
+  console.log("entro");
+  if (favorites.length === 0) {
+    const items = document.querySelector(".heart-favorite");
+    items.remove();
+  }
+}
+
 function listenFavoriteLocal() {
+  hearHeart();
   const favoritesHearts = document.querySelectorAll(".heart");
   for (const favoritesHeart of favoritesHearts) {
     favoritesHeart.addEventListener("click", favoritesHeartClickLocal);
   }
+}
+
+function favoritesEliminateLocal() {
+  favorites = [];
+  const items = document.querySelector(".heart-favorite");
+  items.remove();
+  paintFavorites();
+  setLocalStorage();
+}
+
+function listenEliminateLocal() {
+  const buttonFav = document.querySelector(".button-fav");
+  buttonFav.addEventListener("click", favoritesEliminateLocal);
 }
