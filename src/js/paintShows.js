@@ -28,6 +28,7 @@ function paintShows() {
   let html = "";
   if (shows.length === 0) {
     if (favorites.length > 0) {
+      main.classList.remove("mainFavorites");
       const containerFav = document.querySelector(".container-fav");
       containerFav.classList.add("container-hidden"); //Hace que no se vean los favoritos en la página principal
       const input = document.querySelector(".js--input").value;
@@ -38,6 +39,7 @@ function paintShows() {
       showsList.classList.add("js-main-noresults"); //Da estilos al main cuando no hay resultados
     }
   } else {
+    main.classList.remove("mainFavorites");
     main.classList.add("js-main-showList");
     showsList.classList.remove("js-main-noresults");
     for (let i = 0; i < shows.length; i++) {

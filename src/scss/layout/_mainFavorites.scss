@@ -1,0 +1,22 @@
+.mainFavorites {
+  display: grid;
+  grid-template-rows: 30% 70%;
+  height: 100%;
+  background: none;
+  background-color: black;
+  text-align: center;
+}
+.mainFavorites .js-main-containerList {
+  grid-template-columns: calc(100vw - 100px);
+  grid-template-rows: 10% 90%;
+  text-align: center;
+  .container-fav {
+    width: 100%;
+  }
+  .js-main-showFav {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  // .button-fav {
+  //   text-align: center;
+  // }
+}
