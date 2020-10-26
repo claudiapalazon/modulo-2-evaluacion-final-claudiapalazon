@@ -4,23 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Buscador de series</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Sansita+Swashed:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body class="body">
     <main class="main">
-      <h1 class="main__text">Buscador de series</h1>
-      <form class="main__form">
-        <input
-          type="text"
-          class="main__form--input js--input"
-          placeholder="Ej: Harry"
-        />
-        <input
-          type="button"
-          class="main__form--submit js--button"
-          value="Buscar"
-        />
-      </form>
+      <section class="main__search">
+        <h1 class="main__text">Buscador de series</h1>
+        <form class="main__form">
+          <input
+            type="text"
+            class="main__form--input js--input"
+            placeholder="Ej: Harry"
+          />
+          <input
+            type="button"
+            class="main__form--submit js--button"
+            value="Buscar"
+          />
+        </form>
+      </section>
       <section class="main__lists">
         <ul class="main__list"></ul>
         <div class="container-fav">
