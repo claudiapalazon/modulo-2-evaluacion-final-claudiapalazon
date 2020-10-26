@@ -34,6 +34,7 @@ function paintShows() {
       const input = document.querySelector(".js--input").value;
       showsList.innerHTML = `<small class="no-results">No existe ningun resultado con el nombre "${input}"</small>`;
     } else {
+      showsList.classList.add("js-main-noresults");
       const input = document.querySelector(".js--input").value;
       showsList.innerHTML = `<small class="no-results">No existe ningun resultado con el nombre "${input}"</small>`;
     }
