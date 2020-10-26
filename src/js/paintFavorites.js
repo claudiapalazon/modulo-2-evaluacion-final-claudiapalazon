@@ -8,8 +8,16 @@ function paintFavorites() {
     mainList.classList.remove("js-main-containerList"); // Al eliminar todos los favoritos, se elimina el contenedor.
     showsList.classList.remove("js-main-showListFav"); // Al eliminar todos los favoritos, la lista de "shows" vuelve al diseño por defecto.
   } else if (favorites.length > 0) {
-    mainList.classList.add("js-main-containerList"); //contenedor con las dos listas
-    showsList.classList.add("js-main-showListFav"); //cambia el grid template si hay favoritos.
+    if (shows.length === 0) {
+      mainList.classList.add("js-main-containerList2");
+      showsList.classList.add("js-main-showListFav");
+      showsList.classList.add("js-main-noresults");
+    } else {
+      mainList.classList.remove("js-main-containerList2");
+      showsList.classList.remove("js-main-noresults");
+      showsList.classList.add("js-main-showListFav"); //cambia el grid template si hay favoritos.
+      mainList.classList.add("js-main-containerList"); //contenedor con las dos listas
+    }
     favList.classList.add("js-main-showFav"); // Añade la clase para las tarjetas de favoritos
     let htmlFav = "";
     for (let i = 0; i < favorites.length; i++) {

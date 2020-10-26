@@ -48,3 +48,9 @@
 .main .container-hidden {
   display: none;
 }
+.main .js-main-containerList2 {
+  grid-template-columns: 1fr;
+  .js-main-showFav {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

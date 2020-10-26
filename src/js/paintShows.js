@@ -36,12 +36,11 @@ function paintShows() {
     } else {
       const input = document.querySelector(".js--input").value;
       showsList.innerHTML = `<small class="no-results">No existe ningun resultado con el nombre "${input}"</small>`;
-      showsList.classList.add("js-main-noresults"); //Da estilos al main cuando no hay resultados
     }
   } else {
+    showsList.classList.remove("js-main-noresults");
     main.classList.remove("mainFavorites");
     main.classList.add("js-main-showList");
-    showsList.classList.remove("js-main-noresults");
     for (let i = 0; i < shows.length; i++) {
       let classFav = getClassShow(i);
       html = paintData(html, `<li class='js-show-item ${classFav}' id="${i}">`);

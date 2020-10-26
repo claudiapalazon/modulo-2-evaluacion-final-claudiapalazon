@@ -8,6 +8,7 @@ function clickInHeart() {
     main.classList.remove("mainFavorites");
     containerFav.classList.add("container-hidden");
   } else {
+    mainList.classList.add("js-main-containerList");
     containerFav.classList.remove("container-hidden");
     main.classList.add("mainFavorites");
     paintFavorites();
