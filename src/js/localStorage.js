@@ -24,9 +24,11 @@ function setLocalStorage() {
 function getLocalStorage() {
   const localFavorites = localStorage.getItem("favorites");
   const localFavoritesArray = JSON.parse(localFavorites);
-  if (localFavoritesArray.length > 0) {
-    favorites = localFavoritesArray;
-    paintHeart();
+  if (localFavorites !== null) {
+    if (localFavoritesArray.length > 0) {
+      favorites = localFavoritesArray;
+      paintHeart();
+    }
   }
 }
 
