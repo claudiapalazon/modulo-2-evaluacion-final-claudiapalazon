@@ -38,7 +38,6 @@ function paintShows() {
       showsList.classList.add("js-main-noresults"); //Da estilos al main cuando no hay resultados
     }
   } else {
-    // main.classList.remove("mainFavorites");
     main.classList.add("js-main-showList");
     showsList.classList.remove("js-main-noresults");
     for (let i = 0; i < shows.length; i++) {

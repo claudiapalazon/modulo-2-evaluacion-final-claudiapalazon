@@ -35,4 +35,5 @@ function listenShow() {
   paintFavorites();
   setLocalStorage();
   listenFavorite(); //Escucha el corazón de los favoritos para ver si hay que borrarlo o no (heart.js)
+  listenEliminate(); //Escucha el botón de eliminar todos los favoritos (heart.js)
 }
