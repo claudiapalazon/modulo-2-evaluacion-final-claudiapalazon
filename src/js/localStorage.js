@@ -2,42 +2,18 @@
 
 //Funciones de guardar y recoger del localStorage. Si te encuentras en la página principal, puedes mirar lo que hay guardado en el localStorage. También puedes verlo si realizas cualquier búsqueda.
 
-function clickInHeart() {
-  const containerFav = document.querySelector(".container-fav");
-  if (main.classList.contains("mainFavorites")) {
-    main.classList.remove("mainFavorites");
-    containerFav.classList.add("container-hidden");
-  } else {
-    mainList.classList.add("js-main-containerList");
-    containerFav.classList.remove("container-hidden");
-    main.classList.add("mainFavorites");
-    paintFavorites();
-    listenFavoriteLocal();
-    listenEliminateLocal();
-  }
-}
-function paintHeart() {
-  const newItem = document.createElement("div");
-  const newContent = document.createTextNode("❤");
-  newItem.appendChild(newContent);
-  newItem.classList.add("heart-favorite");
-  main.appendChild(newItem);
-  newItem.addEventListener("click", clickInHeart);
+function favoritesEliminateLocal() {
+  favorites = [];
+  const items = document.querySelector(".heart-favorite");
+  items.remove();
+  main.classList.remove("mainFavorites");
+  paintFavorites();
+  setLocalStorage();
 }
 
-function setLocalStorage() {
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-}
-
-function getLocalStorage() {
-  const localFavorites = localStorage.getItem("favorites");
-  const localFavoritesArray = JSON.parse(localFavorites);
-  if (localFavorites !== null) {
-    if (localFavoritesArray.length > 0) {
-      favorites = localFavoritesArray;
-      paintHeart();
-    }
-  }
+function listenEliminateLocal() {
+  const buttonFav = document.querySelector(".button-fav");
+  buttonFav.addEventListener("click", favoritesEliminateLocal);
 }
 
 function favoritesHeartClickLocal(event) {
@@ -69,16 +45,41 @@ function listenFavoriteLocal() {
   }
 }
 
-function favoritesEliminateLocal() {
-  favorites = [];
-  const items = document.querySelector(".heart-favorite");
-  items.remove();
-  main.classList.remove("mainFavorites");
-  paintFavorites();
-  setLocalStorage();
+function clickInHeart() {
+  const containerFav = document.querySelector(".container-fav");
+  if (main.classList.contains("mainFavorites")) {
+    main.classList.remove("mainFavorites");
+    containerFav.classList.add("container-hidden");
+  } else {
+    mainList.classList.add("js-main-containerList");
+    containerFav.classList.remove("container-hidden");
+    main.classList.add("mainFavorites");
+    paintFavorites();
+    listenFavoriteLocal();
+    listenEliminateLocal();
+  }
 }
 
-function listenEliminateLocal() {
-  const buttonFav = document.querySelector(".button-fav");
-  buttonFav.addEventListener("click", favoritesEliminateLocal);
+function paintHeart() {
+  const newItem = document.createElement("div");
+  const newContent = document.createTextNode("❤");
+  newItem.appendChild(newContent);
+  newItem.classList.add("heart-favorite");
+  main.appendChild(newItem);
+  newItem.addEventListener("click", clickInHeart);
+}
+
+function setLocalStorage() {
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+function getLocalStorage() {
+  const localFavorites = localStorage.getItem("favorites");
+  const localFavoritesArray = JSON.parse(localFavorites);
+  if (localFavorites !== null) {
+    if (localFavoritesArray.length > 0) {
+      favorites = localFavoritesArray;
+      paintHeart();
+    }
+  }
 }

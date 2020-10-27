@@ -3,6 +3,7 @@
 
 function paintFavorites() {
   const favList = document.querySelector(".main__fav");
+  console.log(favorites);
   if (favorites.length === 0) {
     favList.innerHTML = "";
     mainList.classList.remove("js-main-containerList"); // Al eliminar todos los favoritos, se elimina el contenedor.
@@ -19,6 +20,23 @@ function paintFavorites() {
       mainList.classList.add("js-main-containerList"); //contenedor con las dos listas
     }
     favList.classList.add("js-main-showFav"); // Añade la clase para las tarjetas de favoritos
+
+    // Otra forma de añadir el botón
+    if (document.querySelector(".paragraph")) {
+      const items = document
+        .querySelector(".container-fav")
+        .querySelector(".paragraph");
+      items.remove();
+    }
+    const buttonFavnew = document.createElement("button");
+    const messageText = document.createTextNode("Borrar tooodos");
+    buttonFavnew.appendChild(messageText);
+    buttonFavnew.classList.add("paragraph");
+    document
+      .querySelector(".container-fav")
+      .insertBefore(buttonFavnew, favList);
+    // Otra forma de añadir el botón
+
     let htmlFav = "";
     for (let i = 0; i < favorites.length; i++) {
       htmlFav = paintData(htmlFav, `<li class='js-fav-item' id="${i}">`);
