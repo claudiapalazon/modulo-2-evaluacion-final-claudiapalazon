@@ -46,6 +46,10 @@ function paintShows() {
       let classFav = getClassShow(i);
       html = paintData(html, `<li class='js-show-item ${classFav}' id="${i}">`);
       html = paintData(html, `<h2 class="js-show-name">${shows[i].name}</h2>`);
+      html = paintData(
+        html,
+        `<h3 class="js-show-name">${shows[i].schedule.days}</h3>`
+      );
       let imageResult;
       if (shows[i].image === null) {
         imageResult =

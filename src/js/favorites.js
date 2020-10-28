@@ -3,6 +3,7 @@
 
 function favoritesShows(event) {
   const clicked = parseInt(event.currentTarget.id);
+  console.log(shows[clicked].name);
   const isFavorite = favorites.indexOf(shows[clicked]);
   let result = false;
   let resultFav;
